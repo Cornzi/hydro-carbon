@@ -7,7 +7,8 @@ System.out.println("enter the name of your institution");
 String st=ok.nextLine();
 for(int i=0;i<st.length();i++)
 {
-Syste.out.print("the sum of the two numbers is:"+(34+45));
+System.out.print("the sum of the two numbers is:"+(34+45));
+System.out.println("the differnce between them is:"+(45-34));
 }
 }
 }
