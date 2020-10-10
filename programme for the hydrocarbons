@@ -1,14 +1,62 @@
-public class hydrocarbons
+import java.util.*;
+class hydrocarbon
 {
-public static void main(String args[])
-{
-Scanner ok =new Scanner(System.in);
-System.out.println("enter the name of your institution");
-String st=ok.nextLine();
-for(int i=0;i<st.length();i++)
-{
-System.out.print("the sum of the two numbers is:"+(34+45));
-System.out.println("the differnce between them is:"+(45-34));
+    public static void bond(int c){
+          System.out.print("  ");
+          for(int i=1;i<=c;i++)
+             System.out.print("|"+" ");
+          System.out.println();
+    }
+    public static void hydrogen(int c){
+          System.out.print("  ");
+          for(int i=1;i<=c;i++)
+             System.out.print("H"+" ");
+          System.out.println();
+    }
+    public static void carbon(int c,char b){
+          System.out.print("H"+"-");
+          for(int i=1;i<=c;i++){
+            if(i==c-1)
+               System.out.print("C"+b);
+            else
+               System.out.print("C"+"-");}
+          System.out.println("H"); 
+    }
+    public static void main(String args[])
+    {
+        Scanner ok=new Scanner(System.in);
+        System.out.println("enter the hydrocarbon you would love");
+        String st=ok.next();
+        int c;
+        switch(st){
+        case "Alkanes":
+                   System.out.println("enter the number of carbon atoms");
+                   c=ok.nextInt();
+                   hydrogen(c);bond(c);carbon(c,'-');bond(c);hydrogen(c);
+            break;
+        case "Alkenes":
+                   System.out.println("enter the number of carbon atoms you would like:");
+                   c=ok.nextInt();
+                   hydrogen(c);bond(c);carbon(c,'=');bond(c-2);hydrogen(c-2);
+        break;
+        case "Alkynes":
+                   System.out.println("enter the number of carbon atoms you would like:");
+                   c=ok.nextInt();
+                   hydrogen(c-2);bond(c-2);carbon(c,'#');bond(c-2);hydrogen(c-2);
+                   System.out.println("Here, '#' stands for triple bond");
+        break;
+    }
+    c=5;
+    System.out.println("ALKANE:");
+     hydrogen(c);bond(c);carbon(c,'-');bond(c);hydrogen(c);
+     System.out.println();
+     System.out.println("ALKENE:");
+       hydrogen(c);bond(c);carbon(c,'=');bond(c-2);hydrogen(c-2);
+       System.out.println();
+       System.out.println("ALKYNE:");
+         hydrogen(c-2);bond(c-2);carbon(c,'#');bond(c-2);hydrogen(c-2);
 }
 }
-}
+
+
+                
